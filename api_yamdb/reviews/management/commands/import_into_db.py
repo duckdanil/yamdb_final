@@ -1,10 +1,8 @@
 import csv
 
 from django.core.management.base import BaseCommand
-
 from reviews.models import (Category, Comment, Genre, GenreTitle, Review,
                             Title, User)
-
 
 HELP_MESSAGE = 'Импорт данных из static/data/*.csv'
 START_MESSAGE = 'Начинаем импорт...'

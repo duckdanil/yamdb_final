@@ -6,9 +6,7 @@ from rest_framework.serializers import (CharField, EmailField, IntegerField,
                                         ModelSerializer, RegexField,
                                         Serializer, SlugRelatedField,
                                         ValidationError)
-
 from reviews.models import Category, Comment, Genre, Review, Title, User
-
 
 REVIEW_EXIST = 'Можно оставить только один отзыв на произведение!'
 TITLE_EXIST = 'Указанное произведение уже существует в базе данных!'
