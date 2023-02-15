@@ -9,7 +9,7 @@ services:
       - ./.env
 
   web:
-    image: duckdanil/yamdb_final
+    image: duckdanil/yamdb_final:latest
     restart: always
     volumes:
       - static_value:/app/static/
