@@ -1,23 +1,16 @@
-# .github/workflows/**main.yml**
 name: yamdb workflow
 
 on: [push]
 
 jobs:
   tests:
-    # «Раннер» — создание изолированного окружения с последней версией Ubuntu 
     runs-on: ubuntu-latest
 
     steps:
-    # Запуск actions checkout — готового скрипта 
-    # для клонирования репозитория
     - uses: actions/checkout@v2
     - name: Set up Python
-      # Запуск actions setup-python — готового скрипта 
-      # для развёртывания окружения Python
       uses: actions/setup-python@v2
       with:
-        # Выбор версии Python
         python-version: 3.7
 
     - name: Install dependencies
@@ -66,7 +59,7 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
-        passphrase: ${{ secrets.PASSPHRASE }} # Если ваш ssh-ключ защищён фразой-паролем
+        passphrase: ${{ secrets.PASSPHRASE }}
         script: |
             sudo docker-compose stop
             sudo docker-compose rm web
